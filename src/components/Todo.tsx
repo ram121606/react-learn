@@ -64,26 +64,29 @@ export const Todo = () => {
     const [todoItems , setTodoItems] = useState([])
     const data =[1,2,3,4,5]
 
-    function handleSubmit(e:any) {
-        e.preventDefault();
-        setTodoItems(prevTodoItems=>{
-            setVal("");
-            return [...prevTodoItems , val]
-        })
-        console.log(todoItems)
+    // useEffect(()=>{
+    //   console.log(todoItems.length)
+    // },[todoItems])
+
+    function handleSubmit() {
+        //console.log(val+"submit")
+       // e.preventDefault();
+        setTodoItems([...todoItems,val]);
+        setVal("")
+
     }
 
     function deleteTask(id : string){
+        console.log(id)
         const newTodo = todoItems.filter(val => val !== id)
         setTodoItems(newTodo)
-        console.log(newTodo)
     }
   return (
     <div>
         <h2>TODO!!!</h2>
-        <form onSubmit={handleSubmit}>
+        <div >
             <input name="todo" value={val} placeholder='Enter the task' onChange={(e)=>setVal(e.target.value)} /><br/>
-            <button type="submit">Add task</button>
+            <button onClick={handleSubmit}  type="submit">Add task</button>
             <h4>The tasks are</h4>
             {todoItems.map(items=>(
                 <>
@@ -92,7 +95,7 @@ export const Todo = () => {
                 </>
                 
             ))}
-        </form>
+        </div>
         <Simple val={data} />
     </div>
   )
