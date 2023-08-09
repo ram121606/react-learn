@@ -1,6 +1,10 @@
 
 import './App.css'
-import { Todo } from './components/Todo'
+import Axios from './components/Axios'
+
+
+
+
 
 function App() {
   
@@ -27,7 +31,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <Todo/>
+      <Axios />
     </>
   )
 }
