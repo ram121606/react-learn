@@ -1,9 +1,23 @@
 
 import './App.css'
 import Axios from './components/Axios'
+import { BrowserRouter,Route,Routes,Link } from 'react-router-dom'
+import Home from './components/Home'
+import Todo from './components/Todo'
+import Simple from './components/Simple'
 
 
-
+function Nav(){
+  return (
+    <ul>
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/axios">Axios</Link></li>
+          <li><Link to="/todo">Todo</Link></li>
+          <li><Link to="/simple">Simple</Link></li>
+      </ul>
+  )
+      
+}
 
 
 function App() {
@@ -31,7 +45,18 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <Axios />
+        
+      
+      
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Nav/>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/todo" element={<Todo/>} />
+          <Route path="/axios" element={<Axios/>} />
+          <Route path='/simple' element={<Simple/>} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

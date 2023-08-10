@@ -1,9 +1,9 @@
-// export const Simple = (props) => {
-//   return (
-//     <div><br/>Displaying list if items<br/>
-//         {props.val.map(ind=>(
-//           <li>{ind}</li>
-//         ))}
-//     </div>
-//   )
-// }
+// import React from 'react'
+
+const Simple = () => {
+  return (
+    <div>Simple page!</div>
+  )
+}
+
+export default Simple
