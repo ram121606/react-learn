@@ -5,6 +5,9 @@ import { BrowserRouter,Route,Routes,Link } from 'react-router-dom'
 import Home from './components/Home'
 import Todo from './components/Todo'
 import Simple from './components/Simple'
+import Login from './components/Login'
+import Result from './components/Result'
+import ContextProvider from './components/ContextProvider'
 
 
 function Nav(){
@@ -14,6 +17,9 @@ function Nav(){
           <li><Link to="/axios">Axios</Link></li>
           <li><Link to="/todo">Todo</Link></li>
           <li><Link to="/simple">Simple</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          {/* <li><Link to="/result">Result</Link></li> */}
+
       </ul>
   )
       
@@ -50,11 +56,16 @@ function App() {
       
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<ContextProvider/>}>
           <Route path='/' element={<Nav/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/todo" element={<Todo/>} />
           <Route path="/axios" element={<Axios/>} />
           <Route path='/simple' element={<Simple/>} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/result' element={<Result/>} />
+          </Route>
+
         </Routes>
       </BrowserRouter>
     </>
