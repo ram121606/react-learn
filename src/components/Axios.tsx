@@ -6,11 +6,11 @@ const Axios = () => {
     const [data , setReqData] = useState("")
     const [value ,setValue] = useState("")
 
-    function getRequest(){
-        axios.get("http://localhost:8000/"+value).then(resp=>{
-            setReqData(resp.data)
-        })
-    }
+    // function getRequest(){
+    //     axios.get("http://localhost:8000/"+value).then(resp=>{
+    //         setReqData(resp.data)
+    //     })
+    // }
 
     function postRequest(){
         axios.post("http://localhost:8000/data",{name:value}).then(resp=>{

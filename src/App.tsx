@@ -8,6 +8,7 @@ import Simple from './components/Simple'
 import Login from './components/Login'
 import Result from './components/Result'
 import ContextProvider from './components/ContextProvider'
+import Signup from './components/Signup'
 
 
 function Nav(){
@@ -18,6 +19,7 @@ function Nav(){
           <li><Link to="/todo">Todo</Link></li>
           <li><Link to="/simple">Simple</Link></li>
           <li><Link to="/login">Login</Link></li>
+          <li><Link to="/signup">Signup</Link></li>
           {/* <li><Link to="/result">Result</Link></li> */}
 
       </ul>
@@ -64,6 +66,7 @@ function App() {
           <Route path='/simple' element={<Simple/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/result' element={<Result/>} />
+          <Route path='/signup' element={<Signup/>} />
           </Route>
 
         </Routes>
